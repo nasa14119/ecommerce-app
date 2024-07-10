@@ -1,0 +1,30 @@
+[
+    {
+        "alt": "Image of a croassant", 
+        "info": {
+            "price": 35, 
+            "title": "croassant"
+        }
+    },
+    {
+        "alt": "Image of a cookie", 
+        "info": {
+            "price": 40, 
+            "title": "chocolate chip cookie"
+        }
+    },
+    {
+        "alt": "Image of a Brownie", 
+        "info": {
+            "price": 20, 
+            "title": "brownie"
+        }
+    },
+    {
+        "alt": "Image of a Cinammon Roll", 
+        "info": {
+            "price": 70, 
+            "title": "cinammon roll"
+        }
+    }
+]

@@ -1,0 +1,29 @@
+---
+import { Card } from "@/components/home/Card";
+
+const images = await Astro.glob("@assets/home/img/new-product-*.webp");
+import ProductsData from "@assets/home/new-products.json";
+---
+
+<article class="px-[10%]">
+  <h2 class="text-2xl mb-10">trending products</h2>
+  <div class="flex max-w-full overflow-x-scroll gap-x-[10vw]">
+    {
+      images.map((v, i) => (
+        <Card img={v.default.src} alt="img" info={ProductsData[i].info} />
+      ))
+    }
+  </div>
+</article>
+<style>
+  div {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    & {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+  }
+</style>

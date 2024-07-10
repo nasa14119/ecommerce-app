@@ -1,0 +1,69 @@
+---
+import { Image } from "astro:assets";
+import {RiMenuFill as Hamburger, RiShoppingBagLine as Bag} from "react-icons/ri"
+import { ButtonCustomLink } from "../ui/linkAnimation";
+---
+
+<nav class="fixed top-8 px-5 text-brown flex inset-x-0 items-center justify-between z-50">
+  <Hamburger className="size-[7vw] "/> 
+  <span class="h-fit font-bold text-xl cursor-pointer">ovenbliss</span>
+  <Bag className="size-[7vw]"/>
+  <div class="absolute -top-8 inset-x-0 -bottom-8 bg-background -z-10 opacity-0"></div>
+</nav>
+<header>
+  <h1 class="text-brown text-3xl flex flex-col items-center">
+    <span>new</span>
+    <span>products</span>
+    <a href="/#">
+      <ButtonCustomLink className="text-brown text-xl before:-bottom-1"
+        >store</ButtonCustomLink
+      >
+    </a>
+  </h1>
+  <picture
+    class="absolute inset-0 -z-50 before:inset-0 before:bg-white/30 before:absolute"
+  >
+    <Image
+      src="https://images.unsplash.com/photo-1627676962573-96e453a99069?q=80&w=3085&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="Image of a backery"
+      width={500}
+      height={500}
+      class="size-full"
+    />
+  </picture>
+</header>
+<style>
+  @keyframes nav-change {
+    10%, to{
+      @apply text-white; 
+    }
+  }
+  @keyframes nav-change-background {
+    from{
+      transform: translateY(-100%)
+    }
+    20%{
+      transform: translateY(0)
+    }
+    10%, to{
+      @apply opacity-100; 
+    }
+  }
+  nav{
+    animation-name: nav-change; 
+    animation-timeline:scroll(block);
+    animation-timing-function: linear;
+  }
+  nav > div{
+    animation-name: nav-change-background; 
+    animation-timeline:scroll(block);
+    animation-timing-function: linear;
+  }
+  header {
+    position: relative;
+    height: 100dvh;
+    display: grid;
+    place-content: center;
+    z-index: 10;
+  }
+</style>
