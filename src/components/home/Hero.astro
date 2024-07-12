@@ -28,7 +28,7 @@ import { ButtonCustomLink } from "../ui/linkAnimation";
       alt="Image of a backery"
       width={500}
       height={500}
-      class="size-full"
+      class="size-full object-cover"
     />
   </picture>
 </header>
@@ -51,13 +51,20 @@ import { ButtonCustomLink } from "../ui/linkAnimation";
   }
   nav{
     animation-name: nav-change; 
-    animation-timeline:scroll(block);
     animation-timing-function: linear;
+    animation-timeline:unset;
+    animation-timeline:scroll(block);
+    animation-duration: 1ms;
+    max-height: 20px;
+    animation-fill-mode: forwards;
   }
   nav > div{
     animation-name: nav-change-background; 
-    animation-timeline:scroll(block);
     animation-timing-function: linear;
+    animation-timeline:unset; 
+    animation-timeline:scroll(block);
+    animation-duration: 1ms;
+    animation-fill-mode: forwards;
   }
   header {
     position: relative;
