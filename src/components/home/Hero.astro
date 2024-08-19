@@ -1,23 +1,16 @@
 ---
 import { Image } from "astro:assets";
-import {RiMenuFill as Hamburger, RiShoppingBagLine as Bag} from "react-icons/ri"
 import { ButtonCustomLink } from "../ui/linkAnimation";
 ---
 
-<nav class="fixed top-8 px-5 text-brown flex inset-x-0 items-center justify-between z-50">
-  <Hamburger className="size-[7vw] "/> 
-  <span class="h-fit font-bold text-xl cursor-pointer">ovenbliss</span>
-  <Bag className="size-[7vw]"/>
-  <div class="absolute -top-8 inset-x-0 -bottom-8 bg-background -z-10 opacity-0"></div>
-</nav>
 <header>
   <h1 class="text-brown text-3xl flex flex-col items-center">
     <span>new</span>
     <span>products</span>
     <a href="/#">
       <ButtonCustomLink className="text-brown text-xl before:-bottom-1"
-        >store</ButtonCustomLink
-      >
+        >store
+      </ButtonCustomLink>
     </a>
   </h1>
   <picture
@@ -33,39 +26,6 @@ import { ButtonCustomLink } from "../ui/linkAnimation";
   </picture>
 </header>
 <style>
-  @keyframes nav-change {
-    10%, to{
-      @apply text-white; 
-    }
-  }
-  @keyframes nav-change-background {
-    from{
-      transform: translateY(-100%)
-    }
-    20%{
-      transform: translateY(0)
-    }
-    10%, to{
-      @apply opacity-100; 
-    }
-  }
-  nav{
-    animation-name: nav-change; 
-    animation-timing-function: linear;
-    animation-timeline:unset;
-    animation-timeline:scroll(block);
-    animation-duration: 1ms;
-    max-height: 20px;
-    animation-fill-mode: forwards;
-  }
-  nav > div{
-    animation-name: nav-change-background; 
-    animation-timing-function: linear;
-    animation-timeline:unset; 
-    animation-timeline:scroll(block);
-    animation-duration: 1ms;
-    animation-fill-mode: forwards;
-  }
   header {
     position: relative;
     height: 100dvh;
