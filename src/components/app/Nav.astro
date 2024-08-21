@@ -3,12 +3,13 @@ import {
   RiMenuFill as Hamburger,
   RiShoppingBagLine as Bag,
 } from "react-icons/ri";
+import { HamburgerBtn } from "./SliderMenu/HamburgerBtn.tsx";
 ---
 
 <nav
   class="fixed top-8 px-5 text-brown flex inset-x-0 items-center justify-between z-50"
 >
-  <Hamburger className="size-[7vw] " />
+  <HamburgerBtn client:load className="size-[7vw] cursor-pointer" />
   <span class="h-fit font-bold text-xl cursor-pointer">ovenbliss</span>
   <Bag className="size-[7vw]" />
   <div

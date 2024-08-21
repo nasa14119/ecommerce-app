@@ -1,0 +1,26 @@
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.background {
+  animation: forwards show 750ms ease;
+  animation-delay: 50ms;
+  opacity: 0;
+  z-index: 40;
+}
+.slider_menu {
+  width: 70%;
+  z-index: 40;
+  transition: 750ms ease-out all;
+  @apply fixed inset-y-0 rounded-r-3xl text-[#c8bfb8] p-5 flex justify-center items-center font-bold lowercase text-[2.5vh] bg-[#454444];
+}
+.slider_menu[data-state="true"] {
+  transform: translateX(-10%);
+}
+.slider_menu[data-state="false"] {
+  transform: translateX(-110%);
+}
