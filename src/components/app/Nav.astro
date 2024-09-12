@@ -7,7 +7,7 @@ import { HamburgerBtn } from "./SliderMenu/HamburgerBtn.tsx";
 ---
 
 <nav
-  class="fixed top-8 px-5 text-brown flex inset-x-0 items-center justify-between z-50"
+  class="nav-phone fixed top-8 px-5 text-brown flex inset-x-0 items-center justify-between z-50 md:hidden"
 >
   <HamburgerBtn client:load className="size-[7vw] cursor-pointer" />
   <span class="h-fit font-bold text-xl cursor-pointer">ovenbliss</span>
@@ -17,11 +17,38 @@ import { HamburgerBtn } from "./SliderMenu/HamburgerBtn.tsx";
   >
   </div>
 </nav>
+<nav
+  class="nav-desktop hidden md:grid z-50 items-center px-5 pt-4 pb-2 fixed top-0 inset-x-0 text-brown"
+>
+  <div class="options">
+    <a href="/">home</a>
+    <a href="/about">about</a>
+    <a href="/contact">contact</a>
+  </div>
+  <a class="text-center font-black text-[3vh]" href="/">ovenbliss</a>
+  <div class="options justify-end">
+    <span>home</span>
+    <span>account</span>
+    <span class="inline-flex items-center">
+      <span class="mr-2"> bag</span>
+      <Bag className="size-6" />
+    </span>
+  </div>
+  <div class="absolute inset-0 -z-10 bg-blur"></div>
+</nav>
 <style>
   @keyframes nav-change {
     10%,
     to {
       @apply text-white;
+    }
+  }
+  @keyframes blur-change {
+    from {
+      backdrop-filter: blur(0px);
+    }
+    to {
+      backdrop-filter: blur(20px);
     }
   }
   @keyframes nav-change-background {
@@ -36,21 +63,26 @@ import { HamburgerBtn } from "./SliderMenu/HamburgerBtn.tsx";
       @apply opacity-100;
     }
   }
-  nav {
-    animation-name: nav-change;
-    animation-timing-function: linear;
+  .nav-desktop,
+  .nav-phone {
+    animation: nav-change linear 1ms forwards;
     animation-timeline: unset;
     animation-timeline: scroll(block);
-    animation-duration: 1ms;
-    max-height: 20px;
-    animation-fill-mode: forwards;
   }
-  nav > div {
-    animation-name: nav-change-background;
-    animation-timing-function: linear;
+  .nav-phone > div {
+    animation: nav-change-background linear 1ms forwards;
     animation-timeline: unset;
     animation-timeline: scroll(block);
-    animation-duration: 1ms;
-    animation-fill-mode: forwards;
+  }
+  .nav-desktop {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .nav-desktop .options {
+    @apply flex gap-x-4 font-semibold;
+  }
+  .bg-blur {
+    animation: blur-change linear 1ms forwards;
+    animation-timeline: unset;
+    animation-timeline: scroll(block);
   }
 </style>
