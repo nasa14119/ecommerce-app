@@ -2,15 +2,20 @@
 import Hr from "@/components/home/Hr.astro";
 ---
 
-<section>
-    <p class="text-center text-pretty">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto tempore accusamus dolor omnis reprehenderit enim ipsum aperiam expedita placeat quae!
-    </p>
-    <Hr/>
+<section class="mx-auto">
+  <p class="text-center text-pretty">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto tempore
+    accusamus dolor omnis reprehenderit enim ipsum aperiam expedita placeat
+    quae!
+  </p>
+  <Hr />
 </section>
 <style>
-    section{
-        padding-inline: 18%;
-        @apply flex gap-y-8 flex-col; 
-    }
+  section {
+    padding-inline: 18%;
+    @apply flex gap-y-8 flex-col;
+  }
+  p {
+    max-width: 30ch;
+  }
 </style>
