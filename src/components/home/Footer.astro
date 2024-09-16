@@ -5,10 +5,17 @@ import { RiInstagramLine as InstagramLogo } from "react-icons/ri";
 
 <footer>
   <div class="phone-info">
-    <MailIcon />
-    <InstagramLogo />
+    <a href="mailto:ovenbliss_bakery@outlook.com" target="_blank">
+      <MailIcon />
+    </a>
+    <a
+      href="https://www.instagram.com/ovenbliss_bakery/?hl=es-es"
+      target="_blank"
+    >
+      <InstagramLogo />
+    </a>
   </div>
-  <ul class="desktop-info flex justify-center gap-x-2">
+  <ul class="desktop-info hidden md:flex justify-center gap-x-2">
     <li class="font-bold">social</li>
     <li>
       <a
@@ -33,14 +40,14 @@ import { RiInstagramLine as InstagramLogo } from "react-icons/ri";
   .phone-info {
     @apply w-full flex justify-center gap-x-5 md:hidden;
   }
-  .phone-info > svg {
+  .phone-info svg {
     @apply size-8;
   }
-  a {
+  .desktop-info a {
     transition: all 250ms ease;
     @apply hover:text-white/30;
   }
-  a::before {
+  .desktop-info ::before {
     content: " ・ ";
     @apply hover:text-white;
   }

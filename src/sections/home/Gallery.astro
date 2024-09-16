@@ -7,7 +7,9 @@ import ProductsData from "@assets/home/new-products.json";
 
 <article class="px-[10%]">
   <h2 class="text-2xl mb-10">trending products</h2>
-  <div class="flex max-w-full overflow-x-scroll gap-x-[10vw] md:gap-x-5">
+  <div
+    class="flex max-w-full overflow-x-scroll gap-x-[10vw] md:gap-x-5 h-[35vh]"
+  >
     {
       images.map((v, i) => (
         <Card img={v.default.src} alt="img" info={ProductsData[i].info} />
