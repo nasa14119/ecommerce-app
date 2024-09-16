@@ -1,6 +1,34 @@
-<section class="relative m-[10%] grid place-content-center z-10 h-[30vh]">
+<a href="/about">
+  <section
+    class="relative m-[10%] grid place-content-center z-10 h-[30vh] group"
+  >
     <picture class="absolute inset-0 rounded-xl overflow-hidden -z-40">
-        <img src="https://images.unsplash.com/photo-1428895009712-de9e58a18409?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="size-full object-cover">
+      <img
+        src="https://images.unsplash.com/photo-1428895009712-de9e58a18409?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt=""
+        class="size-full object-cover group-hover:scale-125"
+      />
     </picture>
-    <span class="text-2xl text-white underline-offset-[10px] underline">our story</span>
-</section>
+    <span
+      class="text-2xl text-white underline-offset-[10px] underline out-story"
+      >our story</span
+    >
+  </section>
+</a>
+<style>
+  picture img {
+    transition: all 750ms ease;
+  }
+  section:hover {
+    cursor: pointer;
+    transition: background 750ms ease;
+    transition-delay: 150ms;
+    @apply bg-brown;
+  }
+  section:hover .out-story {
+    cursor: pointer;
+    transition: color 750ms ease;
+    transition-delay: 150ms;
+    @apply text-white/30;
+  }
+</style>
