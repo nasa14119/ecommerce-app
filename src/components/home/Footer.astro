@@ -1,17 +1,47 @@
 ---
 import { RiMailLine as MailIcon } from "react-icons/ri";
 import { RiInstagramLine as InstagramLogo } from "react-icons/ri";
-
 ---
+
 <footer>
-    <MailIcon/>
-    <InstagramLogo/>
+  <div class="phone-info">
+    <MailIcon />
+    <InstagramLogo />
+  </div>
+  <ul class="desktop-info flex justify-center gap-x-2">
+    <li class="font-bold">social</li>
+    <li>
+      <a
+        href="https://www.instagram.com/ovenbliss_bakery/?hl=es-es"
+        target="_blank"
+        rel="noopener noreferrer">instagram</a
+      >
+    </li>
+    <li>
+      <a
+        href="mailto:ovenbliss_backery@outlook.com"
+        target="_blank"
+        rel="noopener noreferrer">email</a
+      >
+    </li>
+  </ul>
 </footer>
 <style>
-    footer {
-        @apply py-[8vh] border-t-2 w-[80%] mx-auto flex justify-center gap-x-5; 
-    }
-    footer > svg {
-        @apply size-8
-    }
+  footer {
+    @apply py-[8vh] border-t-2 w-[80%] mx-auto;
+  }
+  .phone-info {
+    @apply w-full flex justify-center gap-x-5 md:hidden;
+  }
+  .phone-info > svg {
+    @apply size-8;
+  }
+  a {
+    transition: all 250ms ease;
+    @apply hover:text-white/30;
+  }
+  a::before {
+    content: " ・ ";
+    @apply hover:text-white;
+  }
 </style>
