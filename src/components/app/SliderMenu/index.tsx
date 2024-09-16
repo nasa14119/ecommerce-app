@@ -5,19 +5,15 @@ function SliderMenu({
   state,
   setState,
 }: {
-  state: boolean;
+  state: boolean | null;
   setState: (v?: boolean) => void;
 }) {
-  const [localState, setLocalState] = useToogle();
   useEffect(() => {
     if (state) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
     }
-  }, [state]);
-  useEffect(() => {
-    setLocalState(state);
   }, [state]);
   return (
     <>
@@ -27,7 +23,7 @@ function SliderMenu({
         } ${styles.background}`}
         onClick={() => setState()}
       ></div>
-      <div className={`${styles.slider_menu}`} data-state={localState}>
+      <div className={`${styles.slider_menu}`} data-state={state}>
         <span>Products</span>
       </div>
     </>

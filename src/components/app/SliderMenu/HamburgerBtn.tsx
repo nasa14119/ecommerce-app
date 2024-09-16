@@ -6,9 +6,9 @@ import { useSliderMenu } from ".";
 export function HamburgerBtn(props: any) {
   const [Menu, openMenu] = useSliderMenu();
   return (
-    <>
+    <div>
       <Hamburger onClick={() => openMenu()} {...props} />
       <Menu />
-    </>
+    </div>
   );
 }
