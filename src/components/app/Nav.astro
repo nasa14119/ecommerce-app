@@ -4,8 +4,10 @@ import {
   RiShoppingBagLine as Bag,
 } from "react-icons/ri";
 import { HamburgerBtn } from "./SliderMenu/HamburgerBtn.tsx";
+import { LangBtnDesktop } from "../home/LangBtn";
 ---
 
+<!-- Nav Phone -->
 <nav
   class="nav-phone fixed top-8 px-5 text-brown flex inset-x-0 items-center justify-between z-50 md:hidden"
 >
@@ -17,6 +19,7 @@ import { HamburgerBtn } from "./SliderMenu/HamburgerBtn.tsx";
   >
   </div>
 </nav>
+<!-- Nav Desktop -->
 <nav
   class="nav-desktop hidden md:grid z-50 items-center px-5 pt-4 pb-2 fixed top-0 inset-x-0 text-brown"
 >
@@ -27,6 +30,7 @@ import { HamburgerBtn } from "./SliderMenu/HamburgerBtn.tsx";
   </div>
   <a class="text-center font-black text-[3vh]" href="/">ovenbliss</a>
   <div class="options justify-end">
+    <a href="store">store</a>
     <span>account</span>
     <span class="inline-flex items-center">
       <Bag className="size-6" />
@@ -34,6 +38,9 @@ import { HamburgerBtn } from "./SliderMenu/HamburgerBtn.tsx";
     </span>
   </div>
   <div class="absolute inset-0 -z-10 bg-blur"></div>
+  <div class="fixed right-5 bottom-5 backdrop-blur-sm text-white flex lang">
+    <LangBtnDesktop client:load />
+  </div>
 </nav>
 <style>
   @keyframes nav-change {

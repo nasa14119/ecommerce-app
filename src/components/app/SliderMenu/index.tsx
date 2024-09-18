@@ -1,13 +1,12 @@
 import { useToogle } from "@/hooks/useToogle";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, type HtmlHTMLAttributes, type ReactNode } from "react";
 import styles from "./styles.module.css";
-function SliderMenu({
-  state,
-  setState,
-}: {
+interface Props extends HtmlHTMLAttributes<HTMLDivElement> {
   state: boolean | null;
   setState: (v?: boolean) => void;
-}) {
+  children?: ReactNode;
+}
+function SliderMenu({ state, setState, children, className, ...rest }: Props) {
   useEffect(() => {
     if (state) {
       document.body.style.overflow = "hidden";
@@ -23,17 +22,20 @@ function SliderMenu({
         } ${styles.background}`}
         onClick={() => setState()}
       ></div>
-      <div className={`${styles.slider_menu}`} data-state={state}>
-        <span>Products</span>
+      <div
+        className={`${styles.slider_menu} ${className}`}
+        data-state={state}
+        {...rest}
+      >
+        {children}
       </div>
     </>
   );
 }
-export function useSliderMenu(): [() => ReactNode, () => void] {
+export function useSliderMenu() {
   const [state, setState] = useToogle();
-  const handleState = () => {
-    setState();
-  };
-  const Menu = () => <SliderMenu setState={setState} state={state} />;
-  return [Menu, handleState];
+  const Menu: (props?: HtmlHTMLAttributes<HTMLDivElement>) => JSX.Element = (
+    props
+  ) => <SliderMenu {...props} setState={setState} state={state} />;
+  return [Menu, setState] as const;
 }

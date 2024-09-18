@@ -5,9 +5,9 @@ interface Store {
 }
 
 export function useToogle(): [Store["value"], Store["setValue"]] {
-  const [value, setValue] = useState<Store["value"]>(null);
+  const [valueState, setValue] = useState<Store["value"]>(null);
   const handleValue: Store["setValue"] = (value) => {
-    if (value === null) {
+    if (valueState === null) {
       setValue(true);
       return;
     }
@@ -17,5 +17,5 @@ export function useToogle(): [Store["value"], Store["setValue"]] {
     }
     setValue(value);
   };
-  return [value, handleValue];
+  return [valueState, handleValue];
 }
