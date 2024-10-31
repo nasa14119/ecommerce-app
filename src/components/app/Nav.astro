@@ -21,7 +21,7 @@ import { LangBtnDesktop } from "../home/LangBtn";
 </nav>
 <!-- Nav Desktop -->
 <nav
-  class="nav-desktop hidden md:grid z-50 items-center px-5 pt-4 pb-2 fixed top-0 inset-x-0 text-brown"
+  class="nav-desktop hidden md:grid z-50 items-center px-5 pt-4 pb-2 fixed top-0 inset-x-0 text-brown cursor-default select-none"
 >
   <div class="options">
     <a href="/">home</a>
@@ -38,9 +38,7 @@ import { LangBtnDesktop } from "../home/LangBtn";
     </span>
   </div>
   <div class="absolute inset-0 -z-10 bg-blur"></div>
-  <div class="fixed right-5 bottom-5 backdrop-blur-sm text-white flex lang">
-    <LangBtnDesktop client:load />
-  </div>
+  <LangBtnDesktop client:load />
 </nav>
 <style>
   @keyframes nav-change {
@@ -82,6 +80,11 @@ import { LangBtnDesktop } from "../home/LangBtn";
   }
   .nav-desktop {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+  .nav-desktop span,
+  .nav-desktop a {
+    transition: opacity 150ms ease;
+    @apply hover:opacity-35;
   }
   .nav-desktop .options {
     @apply flex gap-x-4 font-semibold;
