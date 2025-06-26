@@ -1,15 +1,19 @@
 ---
+import { getI18n } from "@i18n/index";
 import { Image } from "astro:assets";
 import { ButtonCustomLink } from "../ui/linkAnimation";
+const currentLocale = Astro.currentLocale ?? "es";
+const { hero } = getI18n({ currentLocale });
+import { getRelativeLocaleUrl } from "astro:i18n";
 ---
 
 <header>
   <h1 class="text-brown text-3xl flex flex-col items-center">
-    <span class="md:text-[4vh]">new</span>
-    <span class="md:text-[4vh]">products</span>
-    <a href="/#">
+    <span class="md:text-[4vh]">{hero["title"][0]}</span>
+    <span class="md:text-[4vh]">{hero["title"][1]}</span>
+    <a href={getRelativeLocaleUrl(currentLocale, "/shop")}>
       <ButtonCustomLink className="text-brown text-xl before:-bottom-1"
-        >store
+        >{hero["subtitle"]}
       </ButtonCustomLink>
     </a>
   </h1>

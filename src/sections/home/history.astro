@@ -1,4 +1,11 @@
-<a href="/about">
+---
+import { getI18n } from "@i18n/index";
+const currentLocale = Astro.currentLocale ?? "es";
+const { history } = getI18n({ currentLocale });
+import { getRelativeLocaleUrl } from "astro:i18n";
+---
+
+<a href={getRelativeLocaleUrl(currentLocale, "about")}>
   <section
     class="relative m-[10%] grid place-content-center z-10 h-[30vh] group"
   >
@@ -11,7 +18,7 @@
     </picture>
     <span
       class="text-2xl text-white underline-offset-[10px] underline out-story"
-      >our story</span
+      >{history["title"]}</span
     >
   </section>
 </a>

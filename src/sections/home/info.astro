@@ -1,12 +1,13 @@
 ---
 import Hr from "@/components/home/Hr.astro";
+import { getI18n } from "@i18n/index";
+const currentLocale = Astro.currentLocale ?? "es";
+const { info } = getI18n({ currentLocale });
 ---
 
 <section class="mx-auto">
   <p class="text-center text-pretty">
-    Welcome to our bakery. We specialize in crafting high-quality brownies made
-    with carefully selected ingredients. Explore our site and discover
-    excellence in every bite. We appreciate your visit and your trust.
+    {info["body"]}
   </p>
   <Hr />
 </section>
