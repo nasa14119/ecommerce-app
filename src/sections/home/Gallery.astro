@@ -1,8 +1,10 @@
 ---
 import { Card } from "@/components/home/Card";
-
-const images = await Astro.glob("@assets/home/img/new-product-*.webp");
 import ProductsData from "@assets/home/new-products.json";
+
+const images = Object.keys(
+  import.meta.glob("@assets/home/img/new-product-*.webp", { eager: true })
+);
 ---
 
 <article class="px-[10%]">
@@ -12,7 +14,7 @@ import ProductsData from "@assets/home/new-products.json";
   >
     {
       images.map((v, i) => (
-        <Card img={v.default.src} alt="img" info={ProductsData[i].info} />
+        <Card img={v} alt="img" info={ProductsData[i].info} />
       ))
     }
   </div>
