@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "headers": ["navegación", "cuenta", "catalogo"],
+    "nav_items": {
+      "/store": "tienda",
+      "/": "home",
+      "/about": "acerca de",
+      "/contact": "contacto"
+    },
+    "btn": "leng"
+  },
+  "hero": {
+    "title": ["nuevos", "productos"],
+    "sutitle": "tienda"
+  },
+  "info": {
+    "body": "   Bienvenido a nuestra pastelería. Nos especializamos en elaborar brownies de alta calidad con ingredientes cuidadosamente seleccionados. Explora nuestro sitio y descubre la excelencia en cada bocado. Agradecemos tu visita y tu confianza."
+  },
+  "history": { "title": "nuestra historia" }
+}

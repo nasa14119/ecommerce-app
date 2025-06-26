@@ -1,0 +1,28 @@
+---
+import type { PROP_LANG } from "@i18n/index";
+const { LANG } = Astro.props as { LANG: PROP_LANG };
+import Hero from "@components/home/Hero.astro";
+import Layout from "@/layouts/Layout.astro";
+import Info from "@/sections/home/info.astro";
+import TrendingGallery from "@/sections/home/Gallery.astro";
+import History from "@/sections/home/history.astro";
+import Footer from "@components/home/Footer.astro";
+import Nav from "@/components/app/Nav.astro";
+---
+
+<Layout title="Ovenbliss">
+  <Nav />
+  <main>
+    <Hero />
+    <Info />
+    <TrendingGallery />
+  </main>
+  <History />
+  <Footer />
+</Layout>
+
+<style>
+  main {
+    @apply flex flex-col gap-y-[15vh];
+  }
+</style>

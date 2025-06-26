@@ -4,31 +4,44 @@ import {
 } from "react-icons/ri";
 import { useSliderMenu } from ".";
 import { LangBtn } from "@components/home/LangBtn";
-export function HamburgerBtn(props: any) {
+import type { PROP_LANG } from "@i18n/index";
+import { getRelativeLocaleUrl } from "astro:i18n";
+type Props = {
+  locale: string;
+  menu: PROP_LANG["nav"];
+} & React.HTMLAttributes<HTMLOrSVGElement>;
+const urls = [
+  "/store",
+  "/",
+  "/about",
+  "/contact",
+] as (keyof PROP_LANG["nav"]["nav_items"])[];
+export function HamburgerBtn({ menu, locale, ...rest }: Props) {
   const [Menu, openMenu] = useSliderMenu();
   return (
     <>
-      <Hamburger onClick={() => openMenu()} {...props} />
+      <Hamburger onClick={() => openMenu()} {...rest} />
       <Menu>
         <ul className="*:font-bold">
           <li className="text-xl pb-4">
-            <header className="">navigation</header>
+            <header className="">{menu.headers[0]}</header>
             <main className="flex flex-col font-normal w-full items-center">
-              <a href="/store">store</a>
-              <a href="/">home</a>
-              <a href="/about">about</a>
-              <a href="/contact">contact</a>
+              {urls.map((url) => (
+                <a href={getRelativeLocaleUrl(locale, url)} key={url}>
+                  {menu.nav_items[url]}
+                </a>
+              ))}
             </main>
           </li>
           <li className="text-xl">
-            <button>acount</button>
+            <button>{menu.headers[1]}</button>
           </li>
           <li className="text-xl">
-            <a href="/store/catalog">catalog</a>
+            <a href="/store/catalog">{menu.headers[2]}</a>
           </li>
         </ul>
         <div className="absolute bottom-5 left-5 flex items-end">
-          <LangBtn />
+          <LangBtn title={menu.btn} />
         </div>
       </Menu>
     </>

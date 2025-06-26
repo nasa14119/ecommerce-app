@@ -1,37 +1,38 @@
 ---
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
-import '@/styles/globals.css'
+const currentLocale = Astro.currentLocale ?? "es";
+import "@/styles/globals.css";
 ---
 
 <!doctype html>
-<html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Ecomerce Application Theme Mock up" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{title}</title>
-	</head>
-	<body class="dark">
-		<slot />
-	</body>
+<html lang={currentLocale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Ecomerce Application Theme Mock up" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body class="dark">
+    <slot />
+  </body>
 </html>
 <style is:global>
-	:root {
-		--background: #121212; 
-		--color: #ffffff; 
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: var(--background);
-		color: var(--color); 
-	}
-	body{
-		min-height: 100dvh;
-  		font-family: "Bai Jamjuree";
-	}
+  :root {
+    --background: #121212;
+    --color: #ffffff;
+  }
+  html {
+    font-family: system-ui, sans-serif;
+    background: var(--background);
+    color: var(--color);
+  }
+  body {
+    min-height: 100dvh;
+    font-family: "Bai Jamjuree";
+  }
 </style>

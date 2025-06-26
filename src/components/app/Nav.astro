@@ -5,13 +5,21 @@ import {
 } from "react-icons/ri";
 import { HamburgerBtn } from "./SliderMenu/HamburgerBtn.tsx";
 import { LangBtnDesktop } from "../home/LangBtn";
+import { getI18n } from "@i18n/index";
+const currentLocale = Astro.currentLocale ?? "es";
+const { nav } = getI18n({ currentLocale });
 ---
 
 <!-- Nav Phone -->
 <nav
   class="nav-phone fixed top-8 px-5 text-brown flex inset-x-0 items-center justify-between z-50 md:hidden"
 >
-  <HamburgerBtn client:load className="size-[7vw] cursor-pointer" />
+  <HamburgerBtn
+    locale={currentLocale}
+    client:load
+    className="size-[7vw] cursor-pointer"
+    menu={nav}
+  />
   <span class="h-fit font-bold text-xl cursor-pointer">ovenbliss</span>
   <Bag className="size-[7vw]" />
   <div
@@ -38,7 +46,7 @@ import { LangBtnDesktop } from "../home/LangBtn";
     </span>
   </div>
   <div class="absolute inset-0 -z-10 bg-blur"></div>
-  <LangBtnDesktop client:load />
+  <LangBtnDesktop title={nav.btn} client:load />
 </nav>
 <style>
   @keyframes nav-change {

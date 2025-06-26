@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "headers": ["navegation", "account", "catalog"],
+    "nav_items": {
+      "/store": "store",
+      "/": "home",
+      "/about": "about",
+      "/contact": "contact"
+    },
+    "btn": "lang"
+  },
+  "hero": {
+    "title": ["new", "products"],
+    "subtitle": "shop"
+  },
+  "info": {
+    "body": "    Welcome to our bakery. We specialize in crafting high-quality brownies made with carefully selected ingredients. Explore our site and discover excellence in every bite. We appreciate your visit and your trust."
+  },
+  "history": { "title": "our story" }
+}

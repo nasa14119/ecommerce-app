@@ -14,4 +14,8 @@ export default defineConfig({
   vite: {
     plugins: [devToolsJson()],
   },
+  i18n: {
+    defaultLocale: "es",
+    locales: ["es", "en"],
+  },
 });
