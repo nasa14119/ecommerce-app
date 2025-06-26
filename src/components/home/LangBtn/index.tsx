@@ -20,7 +20,6 @@ export function LangBtn(props: any) {
     </>
   );
 }
-//TODO make the nav lang btn for desktop, and add the change language funcionality
 export function LangBtnDesktop({ title }: { title: string }) {
   return (
     <div className={`${styles.lang_desktop} group cursor-default`}>
@@ -28,7 +27,7 @@ export function LangBtnDesktop({ title }: { title: string }) {
         {title}
       </span>
       <span
-        className={`text-sm absolute inset-0 grid place-content-center translate-x-full group-hover:translate-x-0 ${styles.lang_opt_desktop}`}
+        className={`${styles.lang_opt_desktop} translate-x-full group-hover:translate-x-0`}
       >
         <a href="/">ES</a>
         <span>/</span>

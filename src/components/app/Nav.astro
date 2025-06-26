@@ -1,13 +1,11 @@
 ---
-import {
-  RiMenuFill as Hamburger,
-  RiShoppingBagLine as Bag,
-} from "react-icons/ri";
+import { RiShoppingBagLine as Bag } from "react-icons/ri";
 import { HamburgerBtn } from "./SliderMenu/HamburgerBtn.tsx";
 import { LangBtnDesktop } from "../home/LangBtn";
 import { getI18n } from "@i18n/index";
 const currentLocale = Astro.currentLocale ?? "es";
 const { nav } = getI18n({ currentLocale });
+import { getRelativeLocaleUrl } from "astro:i18n";
 ---
 
 <!-- Nav Phone -->
@@ -32,13 +30,21 @@ const { nav } = getI18n({ currentLocale });
   class="nav-desktop hidden md:grid z-50 items-center px-5 pt-4 pb-2 fixed top-0 inset-x-0 text-brown cursor-default select-none"
 >
   <div class="options">
-    <a href="/">home</a>
-    <a href="/about">about</a>
-    <a href="/contact">contact</a>
+    <a href={getRelativeLocaleUrl(currentLocale, "/")}
+      >{nav["nav_items"]["/"]}</a
+    >
+    <a href={getRelativeLocaleUrl(currentLocale, "/about")}
+      >{nav["nav_items"]["/about"]}</a
+    >
+    <a href={getRelativeLocaleUrl(currentLocale, "/contact")}
+      >{nav["nav_items"]["/contact"]}</a
+    >
   </div>
   <a class="text-center font-black text-[3vh]" href="/">ovenbliss</a>
   <div class="options justify-end">
-    <a href="store">store</a>
+    <a href={getRelativeLocaleUrl(currentLocale, "/store")}
+      >{nav["nav_items"]["/store"]}</a
+    >
     <span>account</span>
     <span class="inline-flex items-center">
       <Bag className="size-6" />
@@ -90,7 +96,7 @@ const { nav } = getI18n({ currentLocale });
     grid-template-columns: 1fr 1fr 1fr;
   }
   .nav-desktop span,
-  .nav-desktop a {
+  .nav-desktop > a {
     transition: opacity 150ms ease;
     @apply hover:opacity-35;
   }
