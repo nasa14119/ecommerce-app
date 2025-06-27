@@ -1,30 +1,66 @@
-[
+{
+  "title": {
+    "en": "hot products",
+    "es": "saliendo del horno"
+  },
+  "es": [
     {
-        "alt": "Image of a croassant", 
-        "info": {
-            "price": 35, 
-            "title": "croassant"
-        }
+      "alt": "Imagen de croassant",
+      "info": {
+        "price": 35,
+        "title": "croassant"
+      }
     },
     {
-        "alt": "Image of a cookie", 
-        "info": {
-            "price": 40, 
-            "title": "chocolate chip cookie"
-        }
+      "alt": "Imagen de una galleta con chispas de chocolate",
+      "info": {
+        "price": 40,
+        "title": "galleta de chispas"
+      }
     },
     {
-        "alt": "Image of a Brownie", 
-        "info": {
-            "price": 20, 
-            "title": "brownie"
-        }
+      "alt": "Imagen de un brownies",
+      "info": {
+        "price": 20,
+        "title": "brownie"
+      }
     },
     {
-        "alt": "Image of a Cinammon Roll", 
-        "info": {
-            "price": 70, 
-            "title": "cinammon roll"
-        }
+      "alt": "Image de un Cinammon Roll",
+      "info": {
+        "price": 70,
+        "title": "cinammon roll"
+      }
     }
-]
+  ],
+  "en": [
+    {
+      "alt": "Image of a croassant",
+      "info": {
+        "price": 35,
+        "title": "croassant"
+      }
+    },
+    {
+      "alt": "Image of a cookie",
+      "info": {
+        "price": 40,
+        "title": "chocolate chip cookie"
+      }
+    },
+    {
+      "alt": "Image of a Brownie",
+      "info": {
+        "price": 20,
+        "title": "brownie"
+      }
+    },
+    {
+      "alt": "Image of a Cinammon Roll",
+      "info": {
+        "price": 70,
+        "title": "cinammon roll"
+      }
+    }
+  ]
+}

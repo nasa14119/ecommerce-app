@@ -1,14 +1,18 @@
 ---
 import { Card } from "@/components/home/Card";
-import ProductsData from "@assets/home/new-products.json";
+import ProductsDataJSON from "@assets/home/new-products.json";
 
 const images = Object.keys(
   import.meta.glob("@assets/home/img/new-product-*.webp", { eager: true })
 );
+type Locale = "en" | "es";
+const currentLocale = (Astro.currentLocale ?? "es") as Locale;
+const ProductsData = ProductsDataJSON[currentLocale];
+const Title = ProductsDataJSON["title"][currentLocale];
 ---
 
 <article class="px-[10%]">
-  <h2 class="text-2xl mb-10">trending products</h2>
+  <h2 class="text-2xl mb-10">{Title}</h2>
   <div
     class="flex max-w-full overflow-x-scroll gap-x-[10vw] md:gap-x-5 h-[35vh]"
   >
